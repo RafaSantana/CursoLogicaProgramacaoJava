@@ -45,7 +45,7 @@ public class CalculaPoduto {
 				valPar = String.format("\t  Valor parcela: 3X R$ %.2f", valAume / 3);
 				break;
 			default:
-				System.out.println("ERRO! Valor invalido!");
+				JOptionPane.showMessageDialog(null, "ERRO! Valor invalido!");
 			}
 			if ((op == 1) || (op == 2)) {
 				
