@@ -34,7 +34,7 @@ public class CalculadoraCase {
 					simbEq = "-";
 					break;
 				default:
-					JOptionPane.showMessageDialog(null, "     ERRO!\nVALOR INVALIDO!");
+					JOptionPane.showMessageDialog(null, "      ERRO!\nVALOR INVALIDO!");
 					break;
 				}
 				JOptionPane.showMessageDialog(null, "====================" + "\n      '" + num1 + " " + simbEq + " "
