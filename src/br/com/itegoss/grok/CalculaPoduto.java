@@ -1,13 +1,9 @@
 package br.com.itegoss.grok;
 
-import java.io.IOException;
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 public class CalculaPoduto {
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in);
 		float valProd, valAume = 0;
 		String por = "", valPar = "";
 		int cont = 1;
