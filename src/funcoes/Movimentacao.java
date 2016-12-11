@@ -105,7 +105,7 @@ public class Movimentacao {
 		String nome = JOptionPane.showInputDialog("Nome Titular: ");
 		String endereco = JOptionPane.showInputDialog("Informe o endereço do Titular:");
 		int cpf = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe Numero do CPF"));
-		String rg = JOptionPane.showInputDialog("Informe Numero do Rg");
+		int rg = Integer.parseInt(JOptionPane.showInputDialog("Informe Numero do Rg"));
 		pessoa = new Titular (nome, endereco, cpf, rg);
 		
 	}
