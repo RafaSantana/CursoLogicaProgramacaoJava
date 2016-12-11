@@ -1,4 +1,4 @@
-package br.gov.go.itegoss.funcoes;
+package funcoes;
 
 public class Banco {
 
