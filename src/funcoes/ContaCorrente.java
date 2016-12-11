@@ -8,7 +8,16 @@ public class ContaCorrente {
 	private double saldo;
 	private double limiteCreditoEspecial;
 	private Agencia agencia;
+	private Titular titular;
 	
+	public Titular getTitular() {
+		return titular;
+	}
+
+	public void setTitular(Titular titular) {
+		this.titular = titular;
+	}
+
 	public boolean  efetuarSaque(double valorSaque){
 		if(saldo>valorSaque){
 			saldo -= valorSaque;

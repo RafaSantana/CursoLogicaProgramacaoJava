@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class Movimentacao {
 	
 	private ContaCorrente cc;
+	private Titular pessoa;
 
 	public static void main(String[] args) {		
 		Movimentacao operacao = new Movimentacao();
@@ -29,6 +30,9 @@ public class Movimentacao {
 			case 5:
 				JOptionPane.showMessageDialog(null, operacao.getResumo());
 				break;
+			case 6:
+				operacao.cadastrarTitular();
+				break;
 			default:
 				break;
 			}
@@ -42,6 +46,7 @@ public class Movimentacao {
 		cc.setNumero(gerarNumeroAleatorio());
 		cc.setAgencia(new Agencia("24", "RUA 15", 
 			"Parque Amazônia", new Banco("Caixa",23)));
+		cc.setTitular(this.pessoa);
 		JOptionPane.showMessageDialog(null, cc.getResumo());
 	}
 	
@@ -59,6 +64,7 @@ public class Movimentacao {
 			+ "\n 3 - Depósito"
 			+ "\n 4 - Liberar Crédito Especial"
 			+ "\n 5 - Resumo da Conta"
+			+ "\n 6 - Cadastrar Titular"
 			+ "\n 0 - Sair"));
 	}
 	
@@ -92,11 +98,21 @@ public class Movimentacao {
 				"Informe o Valor do Crédito Especial"));
 		cc.liberarCreditoEspecial(valor);
 		JOptionPane.showMessageDialog(null,cc.getResumo());
-	}
 	
-	public String getResumo(){
-		return cc.getAgencia().getBanco().getResumo() +
-				"\n " + cc.getAgencia().getResumo() +
-				"\n " + cc.getResumo();
 	}
+	public void cadastrarTitular(){
+		
+		String nome = JOptionPane.showInputDialog("Nome Titular: ");
+		String endereco = JOptionPane.showInputDialog("Informe o endereço do Titular:");
+		int cpf = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe Numero do CPF"));
+		String rg = JOptionPane.showInputDialog("Informe Numero do Rg");
+		pessoa = new Titular (nome, endereco, cpf, rg);
+		
+	}
+
+public String getResumo(){
+	return cc.getAgencia().getBanco().getResumo() +
+			"\n " + cc.getAgencia().getResumo() +
+			"\n " + cc.getResumo();
+}
 }
