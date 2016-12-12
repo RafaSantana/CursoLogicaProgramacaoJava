@@ -1,12 +1,13 @@
 package funcoes;
 
 public class Agencia {
-
+	//Criação dos atributos
 	private String numero;
 	private String endereco;
 	private String nome;
 	private Banco banco;
 
+	//Criação dos metodos
 	public Agencia(String numero, String end, String nome, Banco banco){
 		this.numero = numero;
 		this.endereco = end;

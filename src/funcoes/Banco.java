@@ -1,10 +1,11 @@
 package funcoes;
 
 public class Banco {
-
+	//Criação dos atributos
 	private String nome;
 	private int numero;
 	
+	// criação do metodo
 	public Banco(String nome, int numero){
 		this.nome = nome;
 		this.numero = numero;

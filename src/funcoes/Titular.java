@@ -3,17 +3,20 @@ package funcoes;
 import javax.swing.JOptionPane;
 
 public class Titular {
+	//Declaração dos atributos
 	private String nome;
 	private String endereco;
-	private  int cpf;
+	private  String cpf;
 	private int rg;
 
-	public Titular (String nome, String endereco, int cpf, int rg){
+	// Criação do metodo
+	public Titular (String nome, String endereco, String cpf, int rg){
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cpf= cpf; 
 		this.rg = rg;
 		
+		//Mostra para o usuário mensagem de confirmação da criação do titular e mostra os dados do titular
 		JOptionPane.showMessageDialog(null,"Titular Cadastrado com Sucesso! \n"
 				+ "\n Nome: " + nome
 				+ "\n Endereço: " + endereco
@@ -36,11 +39,11 @@ public class Titular {
 		this.endereco = endereco;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
