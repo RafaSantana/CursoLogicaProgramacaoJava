@@ -7,10 +7,9 @@ public class TabuadaDe9Vetor {
 		int n[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		int cont;
 		String msg="";
-		for( cont = 0; cont <= n.length; cont++){
-		System.out.println(n[8]+"*"+n[cont]+"="+(n[8]*n[cont]));
+		for( cont = 0; cont < n.length; cont++){
+		msg +=("\t"+n[8]+"*"+n[cont]+"="+(n[8]*n[cont])+(((cont < n.length -1) ? "   |   " : "")));
 		}
-		System.out.println(msg);
-		//JOptionPane.showMessageDialog(null,msg);
+		JOptionPane.showMessageDialog(null,msg);
 	}
 }
