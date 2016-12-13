@@ -2,6 +2,8 @@ package MeusTestes;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class JogoDaVelha {
 	Scanner leitora = new Scanner(System.in);
 
@@ -10,9 +12,10 @@ public class JogoDaVelha {
 	boolean FimJogo = false;
 	int linha = 0, coluna = 0;
 	int rodada = 0;
+	int aux = 1;
 
 	public static void main(String[] args) {
-		System.out.println("\t \t \t Jogo da velha ");
+		System.out.println("\t \t \t =====Jogo da velha===== ");
 		new JogoDaVelha();
 	}
 
@@ -34,117 +37,140 @@ public class JogoDaVelha {
 	}
 
 	public void Jogo() {
+		int loop = 1;
 		do {
-			rodada++;
-			System.out.println("Rodada: " + (rodada));
-			String jogador = (JogadorX ? "X" : "O");
-			System.out.println("É a vez do jogador: " + jogador);
-			InformePosicao(jogador);
-			//Tabuleiro[linha - 1][coluna - 1] = (JogadorX ? "X" : "O");
-			AtualizaTabuleiro();
-			JogadorX = !JogadorX;
-			VerificaVencedor();
-
-		} while (!FimJogo);
+			do {
+				rodada++;
+				System.out.println("Rodada: " + (rodada));
+				String jogador = (JogadorX ? "X" : "O");
+				System.out.println("É a vez do jogador: " + jogador);
+				InformePosicao(jogador);
+				AtualizaTabuleiro();
+				JogadorX = !JogadorX;
+				VerificaVencedor();
+	
+			} while (!FimJogo);
+			
+			System.out.println("Deseja jogar outra partida? \n 1 - JOGAR 0- SAIR");
+			loop = leitora.nextInt();	
+				if (loop != 1 && loop != 0) {
+					System.out.println("VALOR INVALIDO!");
+					loop = 1;
+				}
+				if (loop == 1){
+					new JogoDaVelha();	
+				}
+		} while (loop == 1);
 	}
 
 	public void InformePosicao(String jogada) {
 		
 		System.out.print("Informe o número correspondente a posição desejada: ");
 		int op = leitora.nextInt();
-		switch(op){
-		case 1:
-			if (Tabuleiro [0][0].equals("1")){
-			Tabuleiro[0][0] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 2:
-			if (Tabuleiro[0][1].equals("2")){
-				Tabuleiro[0][1] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 3:
-			if (Tabuleiro[0][2].equals("3")){
-				Tabuleiro[0][2] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 4:
-			if (Tabuleiro[1][0].equals("4")){
-				Tabuleiro[1][0] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 5:
-			if (Tabuleiro[1][1].equals("5")){
-				Tabuleiro[1][1] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 6:
-			if (Tabuleiro[1][2].equals("6")){
-				Tabuleiro[1][2] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 7:
-			if (Tabuleiro[2][0].equals("7")){
-				Tabuleiro[2][0] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 8:
-			if (Tabuleiro[2][1].equals("8")){
-				Tabuleiro[2][1] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-		case 9:
-			if (Tabuleiro[2][2].equals("9")){
-				Tabuleiro[2][2] = jogada;
-			}else{
-				System.out.println("Jogada invalida \n"
-						+ "Informe um valor válido: ");
-				op = leitora.nextInt();
-			}
-			break;
-			default:
-			System.out.println("ERRO! Jogada invalida \n"
-					+ "Informe um valor válido: ");
-				op = leitora.nextInt();	
+		int Aux = 0;
+		while (Aux == 0){
+			switch(op){
+			case 1:
+				if (Tabuleiro [0][0].equals("1")){
+				Tabuleiro[0][0] = jogada;
+				Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
 				break;
+			case 2:
+				if (Tabuleiro[0][1].equals("2")){
+					Tabuleiro[0][1] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 3:
+				if (Tabuleiro[0][2].equals("3")){
+					Tabuleiro[0][2] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 4:
+				if (Tabuleiro[1][0].equals("4")){
+					Tabuleiro[1][0] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 5:
+				if (Tabuleiro[1][1].equals("5")){
+					Tabuleiro[1][1] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 6:
+				if (Tabuleiro[1][2].equals("6")){
+					Tabuleiro[1][2] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 7:
+				if (Tabuleiro[2][0].equals("7")){
+					Tabuleiro[2][0] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 8:
+				if (Tabuleiro[2][1].equals("8")){
+					Tabuleiro[2][1] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+			case 9:
+				if (Tabuleiro[2][2].equals("9")){
+					Tabuleiro[2][2] = jogada;
+					Aux = 1;
+				}else{
+					System.out.println("Jogada invalida \n"
+							+ "Informe um valor válido: ");
+					op = leitora.nextInt();
+				}
+				break;
+				default:
+				System.out.println("ERRO! Jogada invalida \n"
+						+ "Informe um valor válido: ");
+					op = leitora.nextInt();	
+					break;
+			}
 		}
 		
 	}
 
 	public void IniciaJogo() {
-		int aux = 1;
 		for (int l = 0; l < Tabuleiro.length; l++) {
 			for (int c = 0; c < Tabuleiro.length; c++) {
 				Tabuleiro[l][c] = ""+aux;
