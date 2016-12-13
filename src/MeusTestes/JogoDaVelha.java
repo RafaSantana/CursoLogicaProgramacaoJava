@@ -56,8 +56,7 @@ public class JogoDaVelha {
 				if (loop != 1 && loop != 0) {
 					System.out.println("VALOR INVALIDO!");
 					loop = 1;
-				}
-				if (loop == 1){
+				}else if (loop == 1){
 					new JogoDaVelha();	
 				}
 		} while (loop == 1);
