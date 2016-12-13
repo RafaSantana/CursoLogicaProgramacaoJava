@@ -1,4 +1,4 @@
-package MeusTestes;
+package JogoDaVelhaEmDupla;
 
 import java.util.Scanner;
 
