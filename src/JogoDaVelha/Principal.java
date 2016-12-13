@@ -7,7 +7,7 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		Scanner leitora = new Scanner(System.in);// Criado Scanner para ler dados informados pelo usuário.
-		Jogo veia = new Jogo();//Instanciado o objeto da classe "Jogo".
+		Jogo veia = new Jogo();//Instanciado(Criado o objeto) o objeto da classe "Jogo".
 		String posicao;
 		int valida = 0, jogadas = 0;
 		
