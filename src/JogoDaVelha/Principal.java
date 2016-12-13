@@ -57,7 +57,7 @@ public class Principal {
 				break;
 			}
 		}
-		System.out.println("O "+ veia.Ganhou(jogadas)+" venceu");
+		System.out.println("O "+ veia.Ganhou(jogadas));
 		
 	}
 }

@@ -88,9 +88,9 @@ public class Jogo {
 		
 		for(int aux = 0; aux < Tot.length; aux++){
 			if (Tot[aux].equals("XXX")){
-				vencedor = "Jogador 1";
+				vencedor = "Jogador 1 Ganhou!";
 			}else if(Tot[aux].equals("OOO")){
-				vencedor = "Jogador 2";
+				vencedor = "Jogador 2 Ganhou!";
 			}
 		}
 		return vencedor;
