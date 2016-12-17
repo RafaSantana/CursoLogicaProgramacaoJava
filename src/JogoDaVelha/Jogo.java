@@ -72,7 +72,7 @@ public class Jogo {
 	public String Ganhou(int jogadas){
 		String[] Tot = new String[8];
 		String vencedor = "";
-		if (jogadas == 9 ){
+		if (jogadas == 8 ){
 			vencedor = "VELHA/EMPATE";
 		}
 		Tot[0] = tab[0][0]+tab[0][1]+tab[0][2];
